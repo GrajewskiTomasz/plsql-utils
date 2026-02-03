@@ -77,10 +77,10 @@ Domyślna data
  - Spodziewane: w środku numeru jest dzisiejsza data `YYYYMMDD`.
 NIP pusty lub NULL
  - Wejście: `p_nip => null`.
- - Zwracany jest komunikat:'raise_application_error(
+ - Zwracany jest komunikat: `raise_application_error(
                                 -20002,
                                 'pkg_ksef_utils.gen_ksef_number: p_nip is required'
-                            );'.
+                            );`.
 
 ****4. Testy integracyjne****
    
