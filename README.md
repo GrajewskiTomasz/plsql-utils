@@ -41,7 +41,10 @@ Różne wywołania
  - Spodziewane: w większości przypadków różne wartości (statystycznie).
 Parametr niepoprawny
  - Wejście: `gen_ksef_tech_part(0)` lub wartość ujemna.
- - Do przygotowania: albo obsługa przez raise_application_error, albo opisane zachowanie w pakiecie. Dopisać walidację w refaktorze.
+ - Zwracany jest komunikat: `raise_application_error(
+                                -20001,
+                                'pkg_ksef_utils.gen_ksef_tech_part: p_len must be > 0'
+                            );`.
 
 ****2. Testy dla GEN_KSEF_CHECKSUM****
 
@@ -74,8 +77,10 @@ Domyślna data
  - Spodziewane: w środku numeru jest dzisiejsza data `YYYYMMDD`.
 NIP pusty lub NULL
  - Wejście: `p_nip => null`.
- - Aktualne zachowanie: wynik najprawdopodobniej NULL.
- - Zalecenie: dopisać walidację i obsługa przez raise_application_error w refaktorze.
+ - Zwracany jest komunikat:'raise_application_error(
+                                -20002,
+                                'pkg_ksef_utils.gen_ksef_number: p_nip is required'
+                            );'.
 
 ****4. Testy integracyjne****
    
